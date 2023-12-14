@@ -29,17 +29,17 @@ const Home = () => {
 
           <motion.div className="home-content" {...headContainerAnimation}>
             <motion.div {...headTextAnimation}>
-              <h1 className="head-text">
-                Uni <br className="xl:block hidden" /> Style
+              <h1 className="head-text text-white">
+                Uni <br className="xl:block hidden text-white" /> Style
               </h1>
-              <h3 className="text-2xl mt-4">Faça a sua turma ser única!</h3>
+              <h3 className="text-2xl mt-4 text-white">Faça a sua turma ser única!</h3>
             </motion.div>
 
             <motion.div
               {...headContentAnimation}
               className="flex flex-col gap-5"
             >
-              <p className="max-w-md font-normal text-gray-600 text-base">
+              <p className="max-w-md font-normal text-white text-base">
                 Cansados dos mesmos modelos de camisetas clichês de sempre? Crie
                 para a sua turma da faculdade camisetas únicas com o UniStyle.
               </p>
