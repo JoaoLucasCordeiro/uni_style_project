@@ -9,7 +9,7 @@ import {
 } from "../config/motion";
 
 import state from "../store";
-import { CustomButtom } from "../components";
+import { CustomButton } from "../components";
 
 
 const Home = () => {
@@ -44,7 +44,7 @@ const Home = () => {
                 para a sua turma da faculdade camisetas únicas com o UniStyle.
               </p>
 
-              <CustomButtom
+              <CustomButton
               type="filled"
               title="Crie seu modelo"
               handleClick={() => state.intro = false}
