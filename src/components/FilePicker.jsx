@@ -16,7 +16,7 @@ const FilePicker = ({ file, setFile, readFile }) => {
           Selecionar imagem
         </label>
 
-        <p className="mt-2 text-gray-500 text-xs truncate">
+        <p className="mt-2 text-white text-xs truncate">
           {file === '' ? "Nenhuma imagem 😑" : file.name}
         </p>
       </div>
