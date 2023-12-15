@@ -9,10 +9,10 @@ UniStyle Demo
 
 Funcionalidades Principais
 
-    Personalização 3D: Visualize sua camiseta em um modelo 3D em tempo real.
-    Alteração de Cores: Escolha entre uma ampla gama de cores para a sua camiseta.
-    Adição de Logotipos: Importe ou escolha entre uma seleção de logotipos disponíveis.
-    Estampas Personalizadas: Faça upload de suas próprias estampas ou escolha entre as opções pré-definidas.
+- Personalização 3D: Visualize sua camiseta em um modelo 3D em tempo real.
+- Alteração de Cores: Escolha entre uma ampla gama de cores para a sua camiseta.
+- Adição de Logotipos: Importe ou escolha entre uma seleção de logotipos disponíveis.
+- Estampas Personalizadas: Faça upload de suas próprias estampas ou escolha entre as opções pré-definidas.
 
 Pré-requisitos
 
@@ -44,11 +44,12 @@ bash
 npm start
 
 O UniStyle estará disponível em http://localhost:3000.
-Tecnologias Utilizadas
 
-    React: Biblioteca JavaScript para construção de interfaces de usuário.
-    ThreeJS: Biblioteca 3D para renderização de gráficos no navegador.
-    Tailwind CSS: Framework de estilo utilitário para criar interfaces modernas e responsivas.
+## Tecnologias Utilizadas
+
+- React: Biblioteca JavaScript para construção de interfaces de usuário.
+- ThreeJS: Biblioteca 3D para renderização de gráficos no navegador.
+- Tailwind CSS: Framework de estilo utilitário para criar interfaces modernas e responsivas.
 
 Contribuição
 
