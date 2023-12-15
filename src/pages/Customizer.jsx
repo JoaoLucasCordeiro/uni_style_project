@@ -15,14 +15,16 @@ const Customizer = () => {
 
   const [file, setFile] = useState('');
 
-  // const [prompt, setPrompt] = useState('');
-  // const [generatingImg, setGeneratingImg] = useState(false);
+  const [prompt, setPrompt] = useState('');
+  const [generatingImg, setGeneratingImg] = useState(false);
 
   const [activeEditorTab, setActiveEditorTab] = useState("");
   const [activeFilterTab, setActiveFilterTab] = useState({
     logoShirt: true,
     stylishShirt: false,
   })
+
+   const [isopen, setIsopen] = useState(false);
 
   // show tab content depending on the activeTab
   const generateTabContent = () => {
@@ -35,44 +37,44 @@ const Customizer = () => {
           setFile={setFile}
           readFile={readFile}
         />
-      // case "aipicker":
-      //   return <AIPicker 
-      //     prompt={prompt}
-      //     setPrompt={setPrompt}
-      //     generatingImg={generatingImg}
-      //     handleSubmit={handleSubmit}
-      //   />
+      case "aipicker":
+        return <AIPicker 
+          prompt={prompt}
+          setPrompt={setPrompt}
+          generatingImg={generatingImg}
+          handleSubmit={handleSubmit}
+        />
       default:
         return null;
     }
   }
 
-  // const handleSubmit = async (type) => {
-  //   if(!prompt) return alert("Por favor, preencha o campo necessário");
+  const handleSubmit = async (type) => {
+    if(!prompt) return alert("Please enter a prompt");
 
-  //   try {
-  //     setGeneratingImg(true);
+    try {
+      setGeneratingImg(true);
 
-  //     const response = await fetch('http://localhost:8080/api/v1/dalle', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       },
-  //       body: JSON.stringify({
-  //         prompt,
-  //       })
-  //     })
+      const response = await fetch('http://localhost:8080/api/v1/dalle', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          prompt,
+        })
+      })
 
-  //     const data = await response.json();
+      const data = await response.json();
 
-  //     handleDecals(type, `data:image/png;base64,${data.photo}`)
-  //   } catch (error) {
-  //     alert(error)
-  //   } finally {
-  //     setGeneratingImg(false);
-  //     setActiveEditorTab("");
-  //   }
-  // }
+      handleDecals(type, `data:image/png;base64,${data.photo}`)
+    } catch (error) {
+      alert(error)
+    } finally {
+      setGeneratingImg(false);
+      setActiveEditorTab("");
+    }
+  }
 
   const handleDecals = (type, result) => {
     const decalType = DecalTypes[type];
@@ -98,7 +100,7 @@ const Customizer = () => {
         break;
     }
 
-
+    // after setting the state, activeFilterTab is updated
 
     setActiveFilterTab((prevState) => {
       return {
@@ -131,7 +133,12 @@ const Customizer = () => {
                   <Tab 
                     key={tab.name}
                     tab={tab}
-                    handleClick={() => setActiveEditorTab(tab.name)}
+                    handleClick={() => {
+                       setIsopen(!isopen)
+                        if(!isopen){
+                        setActiveEditorTab(tab.name)
+                      }else{setActiveEditorTab("")}
+                    }}
                   />
                 ))}
 
