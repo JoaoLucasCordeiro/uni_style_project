@@ -1,9 +1,7 @@
 # UniStyle 👕
 
 O UniStyle é um projeto desenvolvido em React, utilizando a biblioteca ThreeJS para criar uma experiência interativa de design de camisetas em um ambiente 3D. Com o UniStyle, os usuários têm a oportunidade de personalizar suas camisetas, ajustando cores, logotipos e estampas em tempo real.
-Demonstração
 
-UniStyle Demo
 
 ![aaaaa](https://github.com/JoaoLucasCordeiro/unistyle_project/assets/89361241/e5a30a4f-50e3-4184-a3cb-09793fcda875)
 
